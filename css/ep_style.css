@@ -27,7 +27,11 @@ html{ /*GREAT CSS STANDARDS*/
 }
 
 body{
-    height:100%; /*GREAT CSS STANDARDS*/
+    display:flex;
+    flex-direction:column;
+    flex-wrap:nowrap;
+    align-items:center;
+    height:100vh; /*GREAT CSS STANDARDS*/
     background-color:#010042;
     text-rendering: optimizeSpeed;
     line-height: calc(1em + 0.5rem);
@@ -36,26 +40,15 @@ body{
 
 header#cabecalho{
     text-align:center;
-    position:absolute;
     background-color:#010042;
     width:100%;
-    height:7.3%;
     color:#ffff00;
     font-size:25px;
     margin: 0 auto;
 }
 
-header#cabecalho label{
-    position:absolute;
-    left:50%;
-    transform:translate(-50%);
-    top:20%;
-}
-
 section#tags{
     width:100%;
-    position:absolute;
-    top:7.3%;
     background-color: black;
     color:white;
     text-align:center;
@@ -66,7 +59,6 @@ form{
 }
 
 #orcamento{
-    height:12%;
     background-color:white;
     width:100%;
 }
@@ -90,12 +82,8 @@ form{
 }
 
 main{
-    height:88.5%;
+    height:100vh;
     width:50%;
-    position:absolute;
-    top:87.25px;
-    left:50%;
-    transform:translate(-50%);
     background-color:white;
     color:black;
     text-align:center;
@@ -143,15 +131,24 @@ h3{
 }
 
 footer{
-    position:absolute;
-    bottom:0px;
-    right:405px;
-    text-align:right;
-    width:100%;
+    display:flex;
+    flex-direction:column-reverse;
+    align-items:center;
+    height:100vmax;
+    width:50%;
+    text-align:center;
+    background-color:white;
+    z-index:99;
 }
 
 footer a{
     color:#010042;
+}
+
+@media all and (orientation:landscape){
+    main{
+        height:fit-content;
+    }
 }
 
 @media all and (min-width:2560px){
@@ -162,81 +159,14 @@ footer a{
         top:154.27px;
         height:90.8%;
     }
-    footer{
-        position:absolute;
-        bottom:1px;
-        right:650px;
-    }
 }
 
-@media all and (max-width:1440px){
-    main{
-        top:97.91px;
-        height:89%;
-    }
-    footer{
-        position:absolute;
-        bottom:1px;
-        right:370px;
-    }
-}
-
-@media all and (max-width:1024px){
-    main{
-        top:112.91px;
-        height:83.2%;
-    }
-    footer{
-        position:absolute;
-        bottom:1px;
-        right:260px;
-    }
-}
-
-@media all and (max-width:768px){
-    footer{
-        position:absolute;
-        bottom:1px;
-        right:200px;
-    }
-}
-
-@media all and (max-width:480px){
-    #cabecalho label{
-        position:absolute;
-        width:90%;
-        left:50%;
-        top:25%;
-    }
-    main{
-        top:144.91px;
-        height:78.4%;
-        width:100%;
-    }
-    footer{
-        position:absolute;
-        bottom:1px;
-        right:5px;
-    }
-}
-
-@media all and (max-width:380px){
-    #cabecalho label{
-        position:absolute;
-        font-size:78%;
-        left:50%;
-    }
+@media all and (max-width:500px){
     main{
         width:100%;
-        height:73.4%;
-        top:176.91px;
-    }
-    #botao-orcamento{
-        margin:8px 0 0 0;
+        height:100vh;
     }
     footer{
-        position:absolute;
-        bottom:1px;
-        right:5px;
+        width:100%;
     }
 }
