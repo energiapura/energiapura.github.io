@@ -1,1 +1,1 @@
-console.log("Deu certo!!");
+const intViewportHeight = window.innerHeight;
