@@ -1,1 +1,1 @@
-const intViewportHeight = window.innerHeight;
+const body = window.innerHeight;
